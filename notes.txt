@@ -1,0 +1,13 @@
+pages#home
+users#dashboard
+users#show
+
+offers/index #list of offers
+offers/new #simple form
+offers/create ##no page POST
+offers/show #one offer page
+
+bookings/new #simple form
+bookkings/create ##no page POST
+bookings/show #one booking page
+bookings/approve # LATER
