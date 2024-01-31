@@ -1,1 +1,63 @@
 // Specific CSS for your home-page
+.hero {
+  background-color: #f8f9fa; /* Set the background color for the hero section */
+  padding: 50px 0; /* Add some padding to the hero section */
+  text-align: center; /* Center align text within the hero section */
+
+  h1 {
+    font-size: 36px; /* Set the font size for the heading */
+    color: #333; /* Set the color for the heading */
+  }
+
+  p {
+    font-size: 18px; /* Set the font size for the paragraph */
+    color: #666; /* Set the color for the paragraph */
+  }
+}
+
+/* Apply styles to the container */
+.container .d-flex {
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 30px; /* Add rounded corners */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow */
+  padding: 14px 24px; /* Add padding */
+}
+
+/* Apply styles to the form elements */
+.container .form-control {
+  border: none; /* Remove default border */ /* Remove default border */
+  border-right: 1px solid #ccc; /* Add vertical line */
+}
+
+.container .form-control:last-child {
+  border-right: none; /* Remove border for last input */
+}
+
+.container .btn {
+  border-radius: 50px; /* Add rounded corners to the button */
+  background-color: #ff0000; /* Set background color to red */
+  border-color: #ff0000;
+  color: #fff; /* Set text color to white */
+  padding: 10px 20px; /* Add padding to the button */
+  transition: background-color 0.3s ease; /* Add transition effect */
+  display: flex;
+  align-items: center;
+}
+
+.container .btn:hover {
+  background-color: #ff6666; /* Change background color on hover to a lighter red */
+}
+
+.container .btn span:first-child {
+  margin-right: 5px; /* Adjust the margin to create space between icon and text */
+}
+
+.footer {
+  position: fixed; /* Set the position to fixed */
+  bottom: 0; /* Position it at the bottom of the viewport */
+  width: 100%; /* Make it span the entire width of the viewport */
+  background-color: #333; /* Add background color */
+  color: #fff; /* Set text color */
+  padding: 20px 0; /* Add some padding for spacing */
+  text-align: center; /* Center align text */
+}
