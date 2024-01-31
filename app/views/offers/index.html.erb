@@ -1,0 +1,11 @@
+<h1>Offers Index page</h1>
+<div class="text-center">
+  <h2><strong>List of offers</strong></p>
+  <ul>
+    <% @offers.each do |offer| %>
+      <li><%=offer.user.first_name%>'s offer</li>
+    <% end %>
+  </ul>
+</div>
+
+<%# <%= link_to "Book now", , class: "btn btn-flat" %>
