@@ -2,10 +2,10 @@ pages#home
 users#dashboard
 users#show
 
-offers/index #list of offers
-offers/new #simple form
-offers/create ##no page POST
-offers/show #one offer page
+offers/index #list of offers STAM
+offers/new #simple form STAM
+offers/create ##no page POST STAM
+offers/show #one offer page STAM
 
 bookings/new #simple form
 bookings/create ##no page POST
