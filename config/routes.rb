@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :offers, only: [:index, :new, :create, :show] do
     resources :bookings, only: [:new, :create ]
   end
+
+  get "/dashboard", to: "pages#dashboard"
 end
