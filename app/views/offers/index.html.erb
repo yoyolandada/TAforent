@@ -1,11 +1,27 @@
 <h1>Offers Index page</h1>
-<div class="text-center">
-  <h2><strong>List of offers</strong></p>
-  <ul>
-    <% @offers.each do |offer| %>
-      <li><%=offer.user.first_name%>'s offer</li>
-    <% end %>
-  </ul>
-</div>
 
 <%# <%= link_to "Book now", , class: "btn btn-flat" %>
+
+<div class="card-product-container">
+  <% @offers.each do |offer| %>
+    <div class="card-product">
+      <!-- Image -->
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" alt="Product Image">
+
+      <!-- Content -->
+      <div class="card-product-infos">
+        <!-- User's Offer Page -->
+        <h2><%= offer.user.first_name %>Offer Page</h2>
+
+        <!-- Specialty -->
+        <p><strong>Specialty:</strong> <%= offer.specialty %></p>
+
+        <!-- Price -->
+        <p><strong>Price:</strong> <%= offer.price %></p>
+
+        <!-- Availability -->
+        <p><strong>Availability:</strong> <%= offer.available %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
