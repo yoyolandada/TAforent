@@ -2,3 +2,12 @@
 <p><%= @offer.specialty %></p>
 <p><%= @offer.price %></p>
 <p><%= @offer.available %></p>
+
+
+<% @offer.bookings.each do |booking| %>
+<%= booking.start_date %>
+<%= booking.user.first_name %>
+<%= link_to "accept", accept_booking_path(booking), data: {turbo_method: :patch}  %>
+<%= link_to "decline", decline_booking_path(booking), data: {turbo_method: :patch}  %>
+<% end %>
+

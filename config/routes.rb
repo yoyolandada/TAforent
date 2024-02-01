@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   end
 
   patch "bookings/:id/accept", to: "bookings#accept", as: :accept_booking
-  patch "bookings/:id/decline", to: "bookings#decline", as: :deline_booking
+  patch "bookings/:id/decline", to: "bookings#decline", as: :decline_booking
 end
