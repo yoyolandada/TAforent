@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "dashboard";
 
 .card-product-container {
   display: flex;
@@ -41,3 +42,4 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
