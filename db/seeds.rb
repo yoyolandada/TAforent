@@ -11,7 +11,7 @@ Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
-pedro = User.create!(email: "pedro@gmail.com", password: 654321, first_name: "Pedro", last_name: "P")
+pedro = User.create!(email: "pedro@gmail.com", password: 654321, first_name: "Pedro", last_name: "P", ta: true)
 pedro_haircut = Offer.create!(specialty: "hair-cut", price: 40, user: pedro)
 grazia = User.create!(email: "grazia@gmail.com", password: 654321, first_name: "Grazia", last_name: "B")
 grazia_lesson = Offer.create!(specialty: "italian", price: 50, user: grazia)
