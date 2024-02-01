@@ -11,7 +11,7 @@ before_action :set_offer, only: [:new, :create]
     @booking.user = current_user
     @booking.confirmation = 10
     if @booking.save
-      redirect_to offer_path(@offer)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
