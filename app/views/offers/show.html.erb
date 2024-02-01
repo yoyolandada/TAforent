@@ -1,4 +1,6 @@
 <h1><%= @offer.user.first_name %>'s offer page</h1>
-<p><%= @offer.specialty %></p>
+<h3><%= @offer.specialty %></h3>
 <p><%= @offer.price %></p>
 <p><%= @offer.available %></p>
+
+<%= link_to "Book now", new_offer_booking_path(@offer)%>
