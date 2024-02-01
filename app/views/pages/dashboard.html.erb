@@ -1,0 +1,31 @@
+
+<% if current_user.ta %>
+  <h2 class = "d-flex justify-content-center">Offers</h2>
+  <div class="container d-flex justify-content-center align-items-center ">
+    <% @offers.each do |offer|%>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= offer.specialty%></h5>
+        <p class="card-text"><%= offer.price%></p>
+          <p class="card-text"><%= offer.available%></p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to 'Create a new offer', new_offer_path, class: 'btn btn-primary' %>
+<% end %>
+
+<h2 class = "d-flex justify-content-center">bookings</h2>
+<div class="container d-flex justify-content-center align-items-center">
+  <% @bookings.each do |booking|%>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= booking.start_date%></h5>
+      <p class="card-text"><%= booking.confirmation%></p>
+      <p class="card-text">user email:<%= booking.user.email%></p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <% end %>
+</div>

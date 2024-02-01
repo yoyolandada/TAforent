@@ -1,8 +1,9 @@
 <h1><%= @offer.user.first_name %>'s offer page</h1>
-<p><%= @offer.specialty %></p>
+<h3><%= @offer.specialty %></h3>
 <p><%= @offer.price %></p>
 <p><%= @offer.available %></p>
 
+<<<<<<< HEAD
 
 <% @offer.bookings.each do |booking| %>
 <%= booking.start_date %>
@@ -11,3 +12,6 @@
 <%= link_to "decline", decline_booking_path(booking), data: {turbo_method: :patch}  %>
 <% end %>
 
+=======
+<%= link_to "Book now", new_offer_booking_path(@offer)%>
+>>>>>>> master

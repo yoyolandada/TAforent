@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
- resources :offers, only: [:index, :new, :create, :show] do
+  resources :offers, only: [:index, :new, :create, :show] do
     resources :bookings, only: [:new, :create ]
   end
 
   patch "bookings/:id/accept", to: "bookings#accept", as: :accept_booking
   patch "bookings/:id/decline", to: "bookings#decline", as: :decline_booking
+  get "/dashboard", to: "pages#dashboard"
 end
