@@ -11,12 +11,12 @@ Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
-pedro = User.create!(email: "pedro@gmail.com", password: 654321, first_name: "Pedro", last_name: "BM")
-grazia = User.create!(email: "grazia@gmail.com", password: 654321, first_name: "Grazia", last_name: "C")
-lucia = User.create!(email: "lucia@gmail.com", password: 654321, first_name: "Lucia", last_name: "H")
-dareos = User.create!(email: "dareos@gmail.com", password: 654321, first_name: "Dareos", last_name: "H")
-jess = User.create!(email: "jess@gmail.com", password: 654321, first_name: "Jess", last_name: "SC")
-dari = User.create!(email: "dari@gmail.com", password: 654321, first_name: "Dari", last_name: "G")
+pedro = User.create!(email: "pedro@gmail.com", password: 654321, first_name: "Pedro", last_name: "BM", ta: true)
+grazia = User.create!(email: "grazia@gmail.com", password: 654321, first_name: "Grazia", last_name: "C", ta: true)
+lucia = User.create!(email: "lucia@gmail.com", password: 654321, first_name: "Lucia", last_name: "H", ta: true)
+dareos = User.create!(email: "dareos@gmail.com", password: 654321, first_name: "Dareos", last_name: "H", ta: true)
+jess = User.create!(email: "jess@gmail.com", password: 654321, first_name: "Jess", last_name: "SC", ta: true)
+dari = User.create!(email: "dari@gmail.com", password: 654321, first_name: "Dari", last_name: "G", ta: true)
 marco = User.create!(email: "marco@gmail.com", password: 654321, first_name: "Marco", last_name: "T")
 yolanda = User.create!(email: "yolanda@gmail.com", password: 654321, first_name: "Yolanda", last_name: "M")
 luisa = User.create!(email: "luisa@gmail.com", password: 654321, first_name: "Luisa", last_name: "S")
