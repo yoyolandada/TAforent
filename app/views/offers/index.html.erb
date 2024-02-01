@@ -1,11 +1,10 @@
-<h1>Offers Index page</h1>
+<h1>Here are your available TAs</h1>
+<h2>Choose wisely...</h2>
+
 <div class="text-center">
-  <h2><strong>List of offers</strong></p>
   <ul>
     <% @offers.each do |offer| %>
-      <li><%= link_to offer.user.first_name, offers_path(offer)%>'s offer</li>
+      <li><%= link_to "#{offer.user.first_name}'s offer", offer_path(offer)%></li>
     <% end %>
   </ul>
 </div>
-
-<%# <%= link_to "Book now", , class: "btn btn-flat" %>
