@@ -11,24 +11,24 @@
 </head>
 <body><!-- Include the navbar partial -->
 
-    <!-- Hero section -->
-    <section class="hero">
-        <div class="container">
-            <h1><strong>TAforent</strong></h1>
-            <p>Find and book Teaching Assistants for your needs.</p>
-        </div>
-    </section>
+  <!-- Hero section -->
+  <section class="hero">
+      <div class="container">
+          <h1><strong>TAforent</strong></h1>
+          <p>Find and book Teaching Assistants for your needs.</p>
+      </div>
+  </section>
 
-    <!-- Additional sections or content can be added here -->
-    <div class="container d-flex justify-content-center col-md-6">
-      <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Where" aria-label="Search">
-        <input class="form-control me-2" type="text" id="start-date" placeholder="Start Date" aria-label="Start Date">
-        <input class="form-control me-2" type="text" id="end-date" placeholder="End Date" aria-label="End Date">
-        <button class="btn btn-outline-success" type="submit">
-          <span><i class="fas fa-search"></i></span><span>Search</span>
-        </button>
-    </div>
+  <!-- Additional sections or content can be added here -->
+  <div class="container d-flex justify-content-center col-md-6">
+    <form class="d-flex">
+      <input class="form-control me-2" type="text" placeholder="Where" aria-label="Search">
+      <input class="form-control me-2" type="text" id="start-date" placeholder="Start Date" aria-label="Start Date">
+      <input class="form-control me-2" type="text" id="end-date" placeholder="End Date" aria-label="End Date">
+      <a href="/offers" class="btn btn-outline-success">
+        <span><i class="fas fa-search"></i></span><span>Search</span>
+      </a>
+  </div>
 
   <!-- Include necessary JavaScript files -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -40,6 +40,8 @@
       $("#end-date").datepicker();
     });
   </script>
+
+
 
     <!-- Footer -->
     <footer class="footer">

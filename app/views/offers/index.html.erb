@@ -3,7 +3,7 @@
   <h2><strong>List of offers</strong></p>
   <ul>
     <% @offers.each do |offer| %>
-      <li><%=offer.user.first_name%>'s offer</li>
+      <li><%= link_to offer.user.first_name, offers_path(offer)%>'s offer</li>
     <% end %>
   </ul>
 </div>
