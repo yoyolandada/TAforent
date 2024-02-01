@@ -13,4 +13,7 @@ Rails.application.routes.draw do
  resources :offers, only: [:index, :new, :create, :show] do
     resources :bookings, only: [:new, :create ]
   end
+
+  patch "bookings/:id/accept", to: "bookings#accept", as: :accept_booking
+  patch "bookings/:id/decline", to: "bookings#decline", as: :deline_booking
 end

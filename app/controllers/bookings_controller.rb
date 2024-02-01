@@ -17,6 +17,18 @@ before_action :set_offer, only: [:new, :create]
     end
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.update(confirmation: :accepted)
+    # redirect_to TO BE CONFIRMED
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.update(confirmation: :declined)
+    # redirect_to TO BE CONFIRMED
+  end
+
   private
 
   def set_offer
