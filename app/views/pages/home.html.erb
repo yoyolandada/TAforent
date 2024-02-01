@@ -4,33 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - TAforent</title>
-    <!-- Include your CSS and other headers here -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-BSHzBZVsF21ByURyztrmED4u7DzjQQdFUBoVFLS4yACZkGlcLb+vStC9t6r4+Jv/AJHksBybFZ3A0V6uj25icw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body><!-- Include the navbar partial -->
+<body>
 
-    <!-- Hero section -->
-    <section class="hero">
-        <div class="container">
-            <h1><strong>TAforent</strong></h1>
-            <p>Find and book Teaching Assistants for your needs.</p>
-        </div>
-    </section>
+  <section class="hero">
+      <div class="container">
+          <h1><strong>TAforent</strong></h1>
+          <p>Find and book Teaching Assistants for your needs.</p>
+      </div>
+  </section>
 
-    <!-- Additional sections or content can be added here -->
-    <div class="container d-flex justify-content-center col-md-6">
-      <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Where" aria-label="Search">
-        <input class="form-control me-2" type="text" id="start-date" placeholder="Start Date" aria-label="Start Date">
-        <input class="form-control me-2" type="text" id="end-date" placeholder="End Date" aria-label="End Date">
-        <button class="btn btn-outline-success" type="submit">
-          <span><i class="fas fa-search"></i></span><span>Search</span>
-        </button>
-    </div>
+  <div class="container">
+    <%= simple_form_for :search, url: "/your-link", method: :get do |f| %>
+      <div class="search-inputs d-flex">
+        <%= f.input :where, label: false, input_html: { class: "form-control", placeholder: "Where" } %>
+        <%= button_tag(type: 'submit', class: 'btn btn-outline-success') do %>
+          <span><i class="fas fa-search"></i></span> Search
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
-  <!-- Include necessary JavaScript files -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
@@ -41,7 +38,6 @@
     });
   </script>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 TAforent. All rights reserved.</p>
