@@ -18,9 +18,9 @@
   </section>
 
   <div class="container">
-    <%= simple_form_for :search, url: "/your-link", method: :get do |f| %>
+    <%= simple_form_for :search, url: "#", method: :get do |f| %>
       <div class="search-inputs d-flex">
-        <%= f.input :where, label: false, input_html: { class: "form-control", placeholder: "Where" } %>
+        <%= f.input :specialty, prompt: "Select", label: false, as: :select, collection: ["Ruby", "Rails", "Javascript", "Python", "HTML", "CSS", "PHP"], input_html: { class: "form-control" } %>
         <%= button_tag(type: 'submit', class: 'btn btn-outline-success') do %>
           <span><i class="fas fa-search"></i></span> Search
         <% end %>
@@ -31,17 +31,10 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-  <script>
-    $(document).ready(function(){
-      $("#start-date").datepicker();
-      $("#end-date").datepicker();
-    });
-  </script>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 TAforent. All rights reserved.</p>
-        </div>
-    </footer>
+  <footer class="footer">
+      <div class="container">
+          <p>&copy; 2024 TAforent. All rights reserved.</p>
+      </div>
+  </footer>
 </body>
 </html>
