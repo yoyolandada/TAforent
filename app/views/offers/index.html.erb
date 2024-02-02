@@ -10,7 +10,7 @@
       <!-- Content -->
       <div class="card-product-infos">
         <!-- User's Offer Page -->
-        <h2><%= offer.user.first_name %>Offer Page</h2>
+        <h2><%= offer.user.first_name %></h2>
 
         <!-- Specialty -->
         <p><strong>Specialty:</strong> <%= offer.specialty %></p>
@@ -18,10 +18,10 @@
         <!-- Price -->
         <p><strong>Price:</strong> <%= offer.price %></p>
 
-        <!-- Availability -->
-        <p><strong>Availability:</strong> <%= offer.available %></p>
+        <%= link_to offer_path(offer) do %>
+          <p><strong>Click here and receive a potato</strong></p>
+        <% end %>
       </div>
-       <p><%= link_to "#{offer.user.first_name}'s offer", offer_path(offer)%></p>
     </div>
   <% end %>
 </div>

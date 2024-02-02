@@ -2,7 +2,11 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show]
 
   def index
-    @offers = Offer.all
+    if params[:specialty]
+      @offers = Offer.where(specialty: params[:specialty])
+    else
+      @offers = Offer.all
+    end
   end
 
   def new
