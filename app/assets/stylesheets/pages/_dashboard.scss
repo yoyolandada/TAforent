@@ -8,7 +8,6 @@ h2 {
   height: 180px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -73,4 +72,36 @@ h2 {
 
 .d-flex.justify-content-center:last-child {
   margin-bottom: 20px;
+}
+
+.dashboard-container {
+  width: 100vw;
+  margin: 24px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.dashboard-column {
+  width: 30%;
+  height: 100vw;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+}
+
+.dashboard-offer {
+  width: 100% !important;
+
+}
+
+pending-booking-card {
+  padding: 12px !important;
+}
+
+status-buttons {
+  position: relative !important;
+  justify-content: right !important;
+  margin-right: 12px !important;
 }
