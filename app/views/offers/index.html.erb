@@ -1,6 +1,5 @@
-<h1>Offers Index page</h1>
-
-<%# <%= link_to "Book now", , class: "btn btn-flat" %>
+<h1>Here are your available TAs</h1>
+<h2>Choose wisely...</h2>
 
 <div class="card-product-container">
   <% @offers.each do |offer| %>
@@ -13,7 +12,7 @@
         <!-- User's Offer Page -->
         <h2><%= offer.user.first_name %>Offer Page</h2>
 
-        <!-- Specialty -->
+         <!-- Specialty -->
         <p><strong>Specialty:</strong> <%= offer.specialty %></p>
 
         <!-- Price -->
@@ -22,6 +21,8 @@
         <!-- Availability -->
         <p><strong>Availability:</strong> <%= offer.available %></p>
       </div>
+       <p><%= link_to "#{offer.user.first_name}'s offer", offer_path(offer)%></p>
     </div>
   <% end %>
 </div>
+

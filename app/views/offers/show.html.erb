@@ -1,11 +1,12 @@
 <div class="container">
-  <div class="card w-50 offer_card">
-    <div class="d-flex justify-content-start">
-<h1><%= @offer.user.first_name %>'s offer page</h1>
-<%= image_tag @offer.user.avatar_url, class: "avatar_image" %>
+ <div class="card w-50 offer_card">
+  <div class="d-flex justify-content-start">
+   <h1><%= @offer.user.first_name %>'s offer page</h1>
+    <%= image_tag @offer.user.avatar_url, class: "avatar_image" %>
+    </div>
+    <p> Specialty: <%= @offer.specialty %></p>
+    <p> Price: <%= @offer.price %>€</p>
+  </div>
 </div>
-<p> Specialty: <%= @offer.specialty %></p>
-<p> Price: <%= @offer.price %></p>
-<p><%= @offer.available %></p>
-  </div>
-  </div>
+
+<%= link_to "Book now", new_offer_booking_path(@offer)%>
