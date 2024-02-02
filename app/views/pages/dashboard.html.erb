@@ -1,31 +1,34 @@
 
 <% if current_user.ta %>
-  <h2 class = "d-flex justify-content-center">Offers</h2>
-  <div class="container d-flex justify-content-center align-items-center ">
-    <% @offers.each do |offer|%>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"><%= offer.specialty%></h5>
-        <p class="card-text"><%= offer.price%></p>
-          <p class="card-text"><%= offer.available%></p>
+  <h2 class="d-flex justify-content-center mt-4 mb-3">My Offers</h2>
+  <div class="card-offer">
+    <% @offers.each do |offer| %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-offer-infos">
+        <h2><%= offer.user.first_name %></h2>
+        <p>Speciality: <%= offer.specialty %></p>
+        <p>Price: <%= offer.price %>€</p>
+        <p><%= offer.available %></p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
-    </div>
     <% end %>
   </div>
-  <%= link_to 'Create a new offer', new_offer_path, class: 'btn btn-primary' %>
+  <div class="d-flex justify-content-center mt-4">
+    <%= link_to 'Create a new offer', new_offer_path, class: 'btn btn-primary' %>
+  </div>
+  <hr class="separator">
 <% end %>
 
-<h2 class = "d-flex justify-content-center">bookings</h2>
-<div class="container d-flex justify-content-center align-items-center">
-  <% @bookings.each do |booking|%>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title"><%= booking.start_date%></h5>
-      <p class="card-text"><%= booking.confirmation%></p>
-      <p class="card-text">user email:<%= booking.user.email%></p>
+<h2 class="d-flex justify-content-center mt-4 mb-3">My Bookings</h2>
+<div class="card-booking">
+  <% @bookings.each do |booking| %>
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-booking-infos">
+      <h2><%= booking.user.first_name %></h2>
+      <p><%= booking.start_date %> - <%= booking.end_date %></p>
+      <p>Status: <%= booking.confirmation %></p>
+      <p>Email: <%= booking.user.email %></p>
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
-  </div>
   <% end %>
 </div>
