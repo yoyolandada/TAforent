@@ -1,12 +1,16 @@
 <div class="container">
- <div class="card w-50 offer_card">
-  <div class="d-flex justify-content-start">
-   <h1><%= @offer.user.first_name %></h1>
-    <%= image_tag @offer.user.avatar_url, class: "avatar_image" %>
+  <div class="contain-show w-50">
+  <div class="card w-100 offer_card">
+    <div class="d-flex justify-content-start">
+    <h1><%= @offer.user.first_name %></h1>
+      <%= image_tag @offer.user.avatar_url, class: "avatar_image" %>
+      </div>
+      <p> Specialty: <%= @offer.specialty %></p>
+      <p> Price: <%= @offer.price %>€</p>
     </div>
-    <p> Specialty: <%= @offer.specialty %></p>
-    <p> Price: <%= @offer.price %>€</p>
+    <div class="buttons_show mt-2">
+      <%= link_to "Book now", new_offer_booking_path(@offer), class: "btn btn-outline-success"%>
+      <%= link_to "Back to offers", offers_path, class: "btn_back_inverted"%>
+    </div>
   </div>
 </div>
-
-<%= link_to "Book now", new_offer_booking_path(@offer)%>
