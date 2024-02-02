@@ -12,17 +12,32 @@
       </div>
     </div>
     <% end %>
-    <div class="container d-flex justify-content-center align-items-center">
-      <% @offer.bookings.each do |booking| %>
-      <%= booking.start_date %>
-      <%= booking.user.first_name %>
-      <%= link_to "accept", accept_booking_path(booking), data: {turbo_method: :patch}  %>
-      <%= link_to "decline", decline_booking_path(booking), data: {turbo_method: :patch}  %>
-      <% end %>
-    </div>
   </div>
   <%= link_to 'Create a new offer', new_offer_path, class: 'btn btn-primary' %>
+    <h2 class="d-flex justify-content-center">Pending Bookings</h2>
+    <div class="container d-flex justify-content-center align-items-center">
+      <% @pending_bookings.each do |booking|%>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= booking.start_date%></h5>
+            <p class="card-text"><%= booking.confirmation%></p>
+            <p class="card-text">name:<%= booking.user.first_name %></p>
+            <div class="d-flex">
+              <% if booking.confirmation == "pending" %>
+                <%= link_to "accept", accept_booking_path(booking), data: {turbo_method: :patch}, class: "btn btn-primary"  %>
+                <%= link_to "decline", decline_booking_path(booking), data: {turbo_method: :patch}, class: "btn btn-primary"  %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
 <% end %>
+
+
+
+
+
 
 <h2 class = "d-flex justify-content-center">bookings</h2>
 <div class="container d-flex justify-content-center align-items-center">
