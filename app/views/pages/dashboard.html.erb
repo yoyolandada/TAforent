@@ -2,7 +2,7 @@
   <% if current_user.ta %>
 
     <div class="dashboard-column">
-      <h2 class="justify-content-center mt-4 mb-3">My Offers <%= link_to '+', new_offer_path, class: 'btn btn-primary' %></h2>
+      <h2 class="justify-content-center mt-4 mb-3">My Offers <%= link_to '+', new_offer_path, class: 'btn btn-outline-danger' %></h2>
        <% @offers.each do |offer| %>
     <div class="card-product dashboard-offer">
       <!-- Image -->
@@ -32,8 +32,8 @@
     <div class="container">
       <% @pending_bookings.each do |booking|%>
         <div class="card-product dashboard-offer" style="width: 18rem;">
-          <div class="card-body pending-booking-card">
-            <h5 class="card-title">From: <%= booking.start_date.strftime("%m/%d/%Y")%> To: <%= booking.end_date.strftime("%m/%d/%Y")%> </h5>
+          <div class="card-body pending-booking-card ms-2">
+            <h5 class="card-title">From: <%= booking.start_date.strftime("%d/%m/%Y")%> To: <%= booking.end_date.strftime("%d/%m/%Y")%> </h5>
             <p class="card-text">Status: <%= booking.confirmation.capitalize%></p>
             <p class="card-text">Name: <%= booking.user.first_name.capitalize %></p>
             <div class="d-flex status-buttons">
@@ -50,15 +50,15 @@
   <% end %>
 
   <div class="dashboard-column">
-    <h2 class = "d-flex justify-content-center">bookings</h2>
-    <div class="container d-flex justify-content-center align-items-center">
+    <h2 class = "justify-content-center">Bookings</h2>
+    <div class="container">
       <% if @bookings.present? %>
         <% @bookings.each do |booking|%>
-          <div class="card-product dashboard-offer" style="width: 18rem;">
+          <div class="card-product dashboard-offer ps-2" style="width: 18rem;">
             <div class="card-body pending-booking-card">
-              <h5 class="card-title">From: <%= booking.start_date.strftime("%m/%d/%Y")%> To: <%= booking.end_date.strftime("%m/%d/%Y")%> </h5>
+              <h5 class="card-title">From: <%= booking.start_date.strftime("%d/%m/%Y")%> To: <%= booking.end_date.strftime("%d/%m/%Y")%> </h5>
               <p class="card-text">Status: <%= booking.confirmation.capitalize%></p>
-              <p class="card-text">Name: <%= booking.user.first_name.capitalize %></p>
+              <p class="card-text">Name: <%= booking.offer.user.first_name.capitalize %></p>
             </div>
           </div>
         <% end %>
