@@ -1,29 +1,42 @@
+<div class="dashboard-container d-flex">
+  <% if current_user.ta %>
 
-<% if current_user.ta %>
-  <h2 class="d-flex justify-content-center mt-4 mb-3">My Offers</h2>
-  <div class="card-offer">
-    <% @offers.each do |offer| %>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-offer-infos">
+    <div class="dashboard-column">
+      <h2 class="justify-content-center mt-4 mb-3">My Offers <%= link_to '+', new_offer_path, class: 'btn btn-primary' %></h2>
+       <% @offers.each do |offer| %>
+    <div class="card-product dashboard-offer">
+      <!-- Image -->
+      <%= image_tag offer.user.avatar_url%>
+
+      <!-- Content -->
+      <div class="card-product-infos">
+        <!-- User's Offer Page -->
         <h2><%= offer.user.first_name %></h2>
-        <p>Speciality: <%= offer.specialty %></p>
-        <p>Price: <%= offer.price %>€</p>
-        <p><%= offer.available %></p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    <% end %>
-  </div>
 
-  <%= link_to 'Create a new offer', new_offer_path, class: 'btn btn-primary' %>
-    <h2 class="d-flex justify-content-center">Pending Bookings</h2>
-    <div class="container d-flex justify-content-center align-items-center">
+        <!-- Specialty -->
+        <p><strong>Specialty:</strong> <%= offer.specialty %></p>
+
+        <!-- Price -->
+        <p><strong>Price:</strong> <%= offer.price %></p>
+
+        <%= link_to offer_path(offer) do %>
+          <p><strong>Click here and receive a potato</strong></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+    </div>
+
+    <div class="dashboard-column">
+    <h2 class="justify-content-center">Pending Bookings</h2>
+    <div class="container">
       <% @pending_bookings.each do |booking|%>
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title"><%= booking.start_date%></h5>
-            <p class="card-text"><%= booking.confirmation%></p>
-            <p class="card-text">name:<%= booking.user.first_name %></p>
-            <div class="d-flex">
+        <div class="card-product dashboard-offer" style="width: 18rem;">
+          <div class="card-body pending-booking-card">
+            <h5 class="card-title">From: <%= booking.start_date.strftime("%m/%d/%Y")%> To: <%= booking.end_date.strftime("%m/%d/%Y")%> </h5>
+            <p class="card-text">Status: <%= booking.confirmation.capitalize%></p>
+            <p class="card-text">Name: <%= booking.user.first_name.capitalize %></p>
+            <div class="d-flex status-buttons">
               <% if booking.confirmation == "pending" %>
                 <%= link_to "accept", accept_booking_path(booking), data: {turbo_method: :patch}, class: "btn btn-primary"  %>
                 <%= link_to "decline", decline_booking_path(booking), data: {turbo_method: :patch}, class: "btn btn-primary"  %>
@@ -33,17 +46,25 @@
         </div>
       <% end %>
     </div>
-<% end %>
-
-<h2 class = "d-flex justify-content-center">bookings</h2>
-<div class="container d-flex justify-content-center align-items-center">
-  <% @bookings.each do |booking|%>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title"><%= booking.start_date%></h5>
-      <p class="card-text"><%= booking.confirmation%></p>
-      <p class="card-text">user email:<%= booking.user.email%></p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   <% end %>
+
+  <div class="dashboard-column">
+    <h2 class = "d-flex justify-content-center">bookings</h2>
+    <div class="container d-flex justify-content-center align-items-center">
+      <% if @bookings.present? %>
+        <% @bookings.each do |booking|%>
+          <div class="card-product dashboard-offer" style="width: 18rem;">
+            <div class="card-body pending-booking-card">
+              <h5 class="card-title">From: <%= booking.start_date.strftime("%m/%d/%Y")%> To: <%= booking.end_date.strftime("%m/%d/%Y")%> </h5>
+              <p class="card-text">Status: <%= booking.confirmation.capitalize%></p>
+              <p class="card-text">Name: <%= booking.user.first_name.capitalize %></p>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <p>You have no bookings..</p>
+      <% end %>
+    </div>
+  </div>
 </div>
