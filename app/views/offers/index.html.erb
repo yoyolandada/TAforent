@@ -5,8 +5,7 @@
   <% @offers.each do |offer| %>
     <div class="card-product">
       <!-- Image -->
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" alt="Product Image">
-
+      <%= image_tag offer.user.avatar_url  %>
       <!-- Content -->
       <div class="card-product-infos">
         <!-- User's Offer Page -->
