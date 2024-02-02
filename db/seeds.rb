@@ -11,20 +11,20 @@ Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
-marco = User.create!(email: "marco@jail.com", password: 654321, first_name: "Marco", last_name: "T")
-yolanda = User.create!(email: "yolanda@jail.com", password: 654321, first_name: "Yolanda", last_name: "M")
-luisa = User.create!(email: "luisa@jail.com", password: 654321, first_name: "Luisa", last_name: "S")
-stamatis = User.create!(email: "stamatis@jail.com", password: 654321, first_name: "Stamatis", last_name: "V")
+marco = User.create!(email: "marco@jail.com", password: 654321, first_name: "Marco", last_name: "T", avatar_url: "https://source.unsplash.com/random/?person,face")
+yolanda = User.create!(email: "yolanda@jail.com", password: 654321, first_name: "Yolanda", last_name: "M", avatar_url: "https://source.unsplash.com/random/?person,face")
+luisa = User.create!(email: "luisa@jail.com", password: 654321, first_name: "Luisa", last_name: "S", avatar_url: "https://source.unsplash.com/random/?person,face")
+stamatis = User.create!(email: "stamatis@jail.com", password: 654321, first_name: "Stamatis", last_name: "V", avatar_url: "https://source.unsplash.com/random/?person,face")
 
 puts "User seeds created"
 
-pedro = User.create!(email: "pedro@jail.com", password: 654321, first_name: "Pedro", last_name: "BM", ta: true)
-grazia = User.create!(email: "grazia@jail.com", password: 654321, first_name: "Grazia", last_name: "C", ta: true)
-lucia = User.create!(email: "lucia@jail.com", password: 654321, first_name: "Lucia", last_name: "H", ta: true)
-dareos = User.create!(email: "dareos@jail.com", password: 654321, first_name: "Dareos", last_name: "H", ta: true)
-jess = User.create!(email: "jess@jail.com", password: 654321, first_name: "Jess", last_name: "SC", ta: true)
-dari = User.create!(email: "dari@jail.com", password: 654321, first_name: "Dari", last_name: "G", ta: true)
-arbi = User.create!(email: "arbi@jail.com", password: 654321, first_name: "Arbi", last_name: "V", ta: true)
+pedro = User.create!(email: "pedro@jail.com", password: 654321, first_name: "Pedro", last_name: "BM", ta: true, avatar_url: "https://source.unsplash.com/random/?person,face")
+grazia = User.create!(email: "grazia@jail.com", password: 654321, first_name: "Grazia", last_name: "C", ta: true, avatar_url: "https://source.unsplash.com/random/?person,face")
+lucia = User.create!(email: "lucia@jail.com", password: 654321, first_name: "Lucia", last_name: "H", ta: true, avatar_url: "https://source.unsplash.com/random/?person,face")
+dareos = User.create!(email: "dareos@jail.com", password: 654321, first_name: "Dareos", last_name: "H", ta: true, avatar_url: "https://source.unsplash.com/random/?person,face")
+jess = User.create!(email: "jess@jail.com", password: 654321, first_name: "Jess", last_name: "SC", ta: true, avatar_url: "https://source.unsplash.com/random/?person,face")
+dari = User.create!(email: "dari@jail.com", password: 654321, first_name: "Dari", last_name: "G", ta: true, avatar_url: "https://source.unsplash.com/random/?person,face")
+arbi = User.create!(email: "arbi@jail.com", password: 654321, first_name: "Arbi", last_name: "V", ta: true, avatar_url: "https://source.unsplash.com/random/?person,face")
 
 puts "TA seeds created"
 

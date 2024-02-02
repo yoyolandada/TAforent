@@ -1,19 +1,38 @@
 
 <% if current_user.ta %>
-  <h2 class = "d-flex justify-content-center">Offers</h2>
-  <div class="container d-flex justify-content-center align-items-center ">
-    <% @offers.each do |offer|%>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"><%= offer.specialty%></h5>
-        <p class="card-text"><%= offer.price%></p>
-          <p class="card-text"><%= offer.available%></p>
+  <h2 class="d-flex justify-content-center mt-4 mb-3">My Offers</h2>
+  <div class="card-offer">
+    <% @offers.each do |offer| %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-offer-infos">
+        <h2><%= offer.user.first_name %></h2>
+        <p>Speciality: <%= offer.specialty %></p>
+        <p>Price: <%= offer.price %>€</p>
+        <p><%= offer.available %></p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
-    </div>
     <% end %>
   </div>
+
   <%= link_to 'Create a new offer', new_offer_path, class: 'btn btn-primary' %>
+    <h2 class="d-flex justify-content-center">Pending Bookings</h2>
+    <div class="container d-flex justify-content-center align-items-center">
+      <% @pending_bookings.each do |booking|%>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= booking.start_date%></h5>
+            <p class="card-text"><%= booking.confirmation%></p>
+            <p class="card-text">name:<%= booking.user.first_name %></p>
+            <div class="d-flex">
+              <% if booking.confirmation == "pending" %>
+                <%= link_to "accept", accept_booking_path(booking), data: {turbo_method: :patch}, class: "btn btn-primary"  %>
+                <%= link_to "decline", decline_booking_path(booking), data: {turbo_method: :patch}, class: "btn btn-primary"  %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
 <% end %>
 
 <h2 class = "d-flex justify-content-center">bookings</h2>
@@ -26,6 +45,5 @@
       <p class="card-text">user email:<%= booking.user.email%></p>
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
-  </div>
   <% end %>
 </div>
