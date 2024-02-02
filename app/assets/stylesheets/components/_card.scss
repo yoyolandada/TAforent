@@ -1,6 +1,14 @@
 .offer_card{
+  position: relative;
   margin-inline: auto;
   margin-top: 40px;
   padding: 25px;
   background: white;
+
+  .outside-card-button{
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+  }
 }
+

@@ -1,12 +1,13 @@
 <div class="container">
  <div class="card w-50 offer_card">
-  <div class="d-flex justify-content-start">
-   <h1><%= @offer.user.first_name %></h1>
+  <div class="d-flex flex-column align-items-center">
     <%= image_tag @offer.user.avatar_url, class: "avatar_image" %>
+    <h1><%= @offer.user.first_name %></h1>
     </div>
     <p> Specialty: <%= @offer.specialty %></p>
     <p> Price: <%= @offer.price %>€</p>
+    <%= link_to "Book now", new_offer_booking_path(@offer)%>
+     <%= link_to "Go back", offers_path, class: "outside-card-button"%>
   </div>
-</div>
 
-<%= link_to "Book now", new_offer_booking_path(@offer)%>
+</div>
