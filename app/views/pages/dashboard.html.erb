@@ -12,6 +12,14 @@
       </div>
     </div>
     <% end %>
+    <div class="container d-flex justify-content-center align-items-center">
+      <% @offer.bookings.each do |booking| %>
+      <%= booking.start_date %>
+      <%= booking.user.first_name %>
+      <%= link_to "accept", accept_booking_path(booking), data: {turbo_method: :patch}  %>
+      <%= link_to "decline", decline_booking_path(booking), data: {turbo_method: :patch}  %>
+      <% end %>
+    </div>
   </div>
   <%= link_to 'Create a new offer', new_offer_path, class: 'btn btn-primary' %>
 <% end %>
